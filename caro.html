@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Caro Game</h4>
+<p id="caro">
+<input type="button" value="Change Value" onclick="changeValue1()">
+</body>
+<script>
+    let a=document.getElementById("caro");
+    let board=[];
+    let data="";
+    for(let i =0;i<5;i++){
+        board[i]=new Array(0,0,0,0,0);
+    }
+    for(let i=0;i<5;i++){
+        data +="</br>";
+        for (let j=0;j<5;j++){
+            data+=board[i][j]+"&nbsp;&nbsp";
+        }
+    }
+    data+="<br/><br/><input type='button' value='Change Value()' onclick='changeValue1()'>"
+
+    a.innerHTML=data;
+    function changeValue1() {
+        let pX =prompt("X");
+        let pY = prompt("Y");
+        data="";
+        board[pX][pY]="x";
+        for (let i=0;i<5;i++){
+            data+="<br/>";
+            for (let j=0;j<5;j++){
+                data+=board[i][j]+"&nbsp;&nbsp;&nbsp;&nbsp";
+            }
+        }
+        data+="</br><br/><input type='button' value='Change Value' onclick='changeValue1()'>"
+        a.innerHTML="</hr>" +data;
+
+    }
+</script>
+</html>
